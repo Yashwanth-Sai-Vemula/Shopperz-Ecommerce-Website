@@ -1,0 +1,168 @@
+*{
+    margin: 0px;
+}
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    box-shadow: 0px 1px 3px -2px black;
+    align-items: center;
+}
+.nav-logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-logo p{
+    color: #171717;
+    font-size: 38px;
+    font-weight: bold;
+}
+.nav-menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 40px;
+    font-size: 24px;
+    font-weight: 500;
+
+}
+.nav-menu li {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.nav-menu hr{
+    border: none;
+    width: 80%;
+    height: 3px;
+    border-radius: 10px;
+    background: red;
+}
+.nav-login-menu{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.nav-login-menu button{
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 100px;
+    border: 1px solid #7a7a7a;
+    width: 150px;
+    height: auto;
+    outline: none;
+    background-color: white;
+    color: black;
+    font-weight: 500;
+}
+.nav-login-menu button:active{
+    background-color: aliceblue;
+}
+.nav-cart-count{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: red;
+    color: white;
+    margin-top: -35px;
+    margin-left: -55px;
+}
+
+@media(max-width:1280px){
+    .navbar{
+        padding: 12px 50px;
+    }
+    .nav-logo img{
+        width: 40px;
+    }
+    .nav-logo p{
+        font-size: 25px;
+    }
+    .nav-menu{
+        gap: 30px;
+        font-size: 16px;
+    }
+    .nav-login-menu{
+        gap: 30px;
+    }
+    .nav-login-menu button{
+        width: 120px;
+        height: 45px;
+        font-size: 16px;
+    }
+    .nav-cart-count{
+        margin-left: -40px;
+        font-size: 12px;
+    }
+}
+@media(max-width:1024px){
+    .navbar{
+        padding: 12px 30px;
+    }
+    .nav-menu{
+        gap: 25px;
+        font-size: 14px;
+    }
+    .nav-login-menu button{
+        width: 80px;
+        height: 35px;
+        font-size: 14px;
+    }
+    .nav-login-menu img{
+        width: 30px;
+    }
+    .nav-cart-count{
+        width: 18px;
+        height: 18px;
+    }
+}
+.nav-dropdown{
+    display: none;
+}
+@media(max-width:800px){
+    .navbar{
+        padding: 10px 0px;
+    }
+    .nav-dropdown{
+        display: block;
+        width: 20px;
+        rotate: -90deg;
+        transition: 0.5s;
+    }
+    .nav-menu{
+        display: none;
+        height: 80px;
+        width: 100%;
+        position: absolute;
+        background-color:white;
+        justify-content: center;
+        top: 50px;
+    }
+    .nav-menu-visible{
+        display: flex;
+    }
+    .nav-dropdown.open{
+        transform: rotate(90deg);
+    }  
+}
+@media(max-width:500px){
+    .navbar{
+        padding:8px 0px; 
+        gap: 0;
+    }
+    .nav-logo{
+        transform: scale(0.8);
+    }
+    .nav-menu{
+        height: 70px;
+        top: 50px;
+    }
+    .nav-login-menu{
+        transform: scale(0.8);
+    }
+}

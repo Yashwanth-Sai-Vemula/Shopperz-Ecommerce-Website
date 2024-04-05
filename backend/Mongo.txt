@@ -1,0 +1,9 @@
+{
+  "name":"product123",
+  "id":22,
+  "old_price": 10,
+  "new_price": 8,
+  "category": "kid",
+  "image":
+}
+"http://localhost:4000/images/product_1711466870868.jpg"
