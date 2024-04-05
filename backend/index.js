@@ -4,17 +4,16 @@ const jwt = require("jsonwebtoken")
 const multer = require("multer")
 const path = require("path")
 const cors = require("cors")
+const env = require("dotenv")
 
-const port = 4000
 const app = express()
 
 app.use(express.json())
 app.use(cors())
-
+env.config()
 //Database connection
-
-mongoose.connect("mongodb+srv://yashwanthnetha0:lZa8tQTG7xP5Ui5I@cluster0.cyterdz.mongodb.net/mydatabase")
-
+const port = process.env.PORT
+mongoose.connect(process.env.MONGODB_URL)
 //Api creation
 app.get("/",(req,res)=>{
     res.send("Express App is Running")
@@ -100,7 +99,7 @@ app.post('/register',async (req,res) => {
             id:user.id
         }
     }
-    const token = jwt.sign(data,'secret_ecom')
+    const token = jwt.sign(data,process.env.JWT_SECRET)
     res.json({success:true,token})
 })
 //creating endpoint for login
