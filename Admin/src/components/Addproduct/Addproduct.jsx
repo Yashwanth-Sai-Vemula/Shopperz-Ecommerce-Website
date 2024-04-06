@@ -14,7 +14,7 @@ const Addproduct = () =>{
     const imageHandler = (e) =>{
         setImage(e.target.files[0])
     }
-    const chanegHandler = (e) => {
+    const changeHandler = (e) => {
         setproductDetails({...productDetails,[e.target.name]:e.target.value})
     }
     const addProduct = async ()=>{
@@ -53,21 +53,21 @@ const Addproduct = () =>{
         <div className="add-product">
             <div className="addproduct-itemfield">
                 <p>Product Title</p>
-                <input value={productDetails.name} onChange={chanegHandler} type="text" name='name' placeholder="Type here" />
+                <input value={productDetails.name} onChange={changeHandler} type="text" name='name' placeholder="Type here" />
             </div>
             <div className="addproduct-price">
                 <div className="addproduct-itemfield">
                     <p>Price</p>
-                    <input value={productDetails.old_price} onChange={chanegHandler} type="text" name='old_price' placeholder="Type Here"/>
+                    <input value={productDetails.old_price} onChange={changeHandler} type="text" name='old_price' placeholder="Type Here"/>
                 </div>
                 <div className="addproduct-itemfield">
                     <p>Offer Price</p>
-                    <input value={productDetails.new_price} onChange={chanegHandler} type="text" name='new_price' placeholder="Type Here"/>
+                    <input value={productDetails.new_price} onChange={changeHandler} type="text" name='new_price' placeholder="Type Here"/>
                 </div>
             </div>
             <div className="addproduct-itemfield">
                 <p>Product Category</p>
-                <select value={productDetails.category} onChange={chanegHandler} name="category" className="add-product-selector">
+                <select value={productDetails.category} onChange={changeHandler} name="category" className="add-product-selector">
                     <option value="women">Women</option>
                     <option value="men">Men</option>
                     <option value="Kids">Kids</option>
